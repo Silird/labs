@@ -1,0 +1,65 @@
+package labs.lab5.Listeners;
+
+import labs.lab2.frame.MyComboBox;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+/**
+ * Обработка события нажатия на кнопку удаления элемента из таблицу
+ */
+
+public class ActionRemoveListener5 implements ActionListener {
+    protected JFrame carsList;
+    protected DefaultTableModel model;
+    protected JTable cars;
+    protected MyComboBox cCombo;
+
+    /**
+     * Конструктор
+     * @param cList
+     * @param m
+     * @param c
+     * @param cC
+     */
+    public ActionRemoveListener5(JFrame cList, DefaultTableModel m, JTable c, MyComboBox cC) {
+        carsList = cList;
+        model = m;
+        cars= c;
+        cCombo = cC;
+    }
+
+    /**
+     * Исключительная ситуация, когда не выбрана строка для удаления
+     */
+    private class NullSelectedException extends Exception {
+        public NullSelectedException() {
+            super("Ошибка: Не выбрана строка таблицы для удаления");
+        }
+    }
+
+    /**
+     * Удаление выбраных строчек таблицы
+     * @param e
+     */
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        int count, i, begin;
+        try {
+            count = cars.getSelectedRowCount();
+            if (count == 0) {
+                throw new NullSelectedException();
+            }
+            begin = cars.getSelectedRows()[0];
+            for (i = begin; i < (begin + count); i++) {
+                model.removeRow(begin);
+            }
+            cCombo.refresh(model);
+        }
+        catch (NullSelectedException ex) {
+            JOptionPane.showMessageDialog(carsList, ex.getMessage());
+        }
+    }
+}
