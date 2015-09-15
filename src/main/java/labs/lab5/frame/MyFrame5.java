@@ -25,11 +25,11 @@ public class MyFrame5 extends MyFrame4 {
 
         save = new FileDialog(carsList, "Сохранение таблицы", FileDialog.SAVE);
         save.setFile("*.txt");
-        save.setDirectory("Сохранённые таблицы");
+        save.setDirectory("D:\\Work\\Java\\Универ\\labs\\Сохранённые таблицы");
 
         load = new FileDialog(carsList, "Загрузка таблицы", FileDialog.LOAD);
         load.setFile("*.txt");
-        load.setDirectory("Сохранённые таблицы");
+        load.setDirectory("D:\\Work\\Java\\Универ\\labs\\Сохранённые таблицы");
 
         saveBut.addActionListener(new ActionSaveListener5(carsList, save, model));
         openBut.addActionListener(new ActionLoadListener5(carsList, load, model, client));
@@ -59,28 +59,28 @@ public class MyFrame5 extends MyFrame4 {
 
         checkBook = new JCheckBox("Готовность");
 
-        addBut = new JButton(new ImageIcon("pictures/add.png"));
+        addBut = new JButton(new ImageIcon(getClass().getResource("/pictures/add.png")));
         addBut.setToolTipText("Добавить элемент в таблицу");
         addBut.addMouseListener(new MouseAddListener5(addBut));
         addBut.addActionListener(new ActionAddListener5(carsList, model, clientName, carName, date, checkBook, client));
 
-        removeBut = new JButton(new ImageIcon("pictures/remove.png"));
+        removeBut = new JButton(new ImageIcon(getClass().getResource("/pictures/remove.png")));
         removeBut.setToolTipText("Удалить выбранные строки из таблицы");
         removeBut.addActionListener(new ActionRemoveListener5(carsList, model, cars, client));
         removeBut.addMouseListener(new MouseRemoveListener5(removeBut));
 
-        editBut = new JButton(new ImageIcon("pictures/edit.png"));
+        editBut = new JButton(new ImageIcon(getClass().getResource("/pictures/edit.png")));
         editBut.setToolTipText("Редактировать выбранную строку таблицы");
         editBut.addMouseListener(new MouseEditListener5(editBut));
 
-        checkEditBut = new JButton(new ImageIcon("pictures/add.png"));
+        checkEditBut = new JButton(new ImageIcon(getClass().getResource("/pictures/add.png")));
         checkEditBut.setToolTipText("Принять редактирование");
         checkEditBut.setVisible(false);
         checkEditBut.addMouseListener(new MouseAddListener5(checkEditBut));
 
-        undoBut = new JButton(new ImageIcon("pictures/undo.png"));          //  (\/)
-        undoBut.setToolTipText("Отменить редактирование");                  //  ( ..)
-        undoBut.setVisible(false);                                          // c(")(")
+        undoBut = new JButton(new ImageIcon(getClass().getResource("/pictures/undo.png"))); //  (\/)
+        undoBut.setToolTipText("Отменить редактирование");                                  //  ( ..)
+        undoBut.setVisible(false);                                                          // c(")(")
         undoBut.addMouseListener(new MouseUndoListener5(undoBut));
 
         editBut.addActionListener(new ActionEditListener5(carsList, model, cars, addBut, checkEditBut,

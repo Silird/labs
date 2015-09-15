@@ -18,17 +18,14 @@ public class MouseRemoveListener5 implements MouseListener {
         removeBut = removeB;
     }
 
-    @Override
     public void mouseClicked(MouseEvent e) {
 
     }
 
-    @Override
     public void mousePressed(MouseEvent e) {
 
     }
 
-    @Override
     public void mouseReleased(MouseEvent e) {
 
     }
@@ -37,17 +34,15 @@ public class MouseRemoveListener5 implements MouseListener {
      * При наведении мышки отобразить активную иконку
      * @param e
      */
-    @Override
     public void mouseEntered(MouseEvent e) {
-        removeBut.setIcon(new ImageIcon("pictures/remove_active.png"));
+        removeBut.setIcon(new ImageIcon(getClass().getResource("/pictures/remove_active.png")));
     }
 
     /**
      * При отведении мышки отобразить стандартную иконку
      * @param e
      */
-    @Override
     public void mouseExited(MouseEvent e) {
-        removeBut.setIcon(new ImageIcon("pictures/remove.png"));
+        removeBut.setIcon(new ImageIcon(getClass().getResource("/pictures/remove.png")));
     }
 }

@@ -22,7 +22,6 @@ public class ActionFilterListener3 implements ActionListener {
      * Вывод на экран сообщения
      * @param e
      */
-    @Override
     public void actionPerformed(ActionEvent e) {
         JOptionPane.showMessageDialog(carsList, "Проверка нажатия на кнопку");
     }

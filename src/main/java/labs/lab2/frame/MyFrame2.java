@@ -34,19 +34,19 @@ public class MyFrame2 {
         carsList.setLocationRelativeTo(null);
         carsList.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        createBut = new JButton(new ImageIcon("pictures/create.png"));
+        createBut = new JButton(new ImageIcon(getClass().getResource("/pictures/create.png")));
         createBut.setToolTipText("Создать новый список клиентов");
 
-        openBut = new JButton(new ImageIcon("pictures/open.png"));
+        openBut = new JButton(new ImageIcon(getClass().getResource("/pictures/open.png")));
         openBut.setToolTipText("Открыть список клиентов");
 
-        saveBut = new JButton(new ImageIcon("pictures/save.png"));
+        saveBut = new JButton(new ImageIcon(getClass().getResource("/pictures/save.png")));
         saveBut.setToolTipText("Сохранить список клиентов");
 
-        printBut = new JButton(new ImageIcon("pictures/print.png"));
+        printBut = new JButton(new ImageIcon(getClass().getResource("/pictures/print.png")));
         printBut.setToolTipText("Распечатать список клиентов");
 
-        exitBut = new JButton(new ImageIcon("/pictures/exit.png"));
+        exitBut = new JButton(new ImageIcon(getClass().getResource("/pictures/exit.png")));
         exitBut.setToolTipText("Выход");
 
         toolBar = new JToolBar("Панель инструментов");
@@ -72,7 +72,7 @@ public class MyFrame2 {
         dateTake.setColumns(12);
         filterLabel = new JLabel("Поиск");
         //bookName.sets
-        filterBut = new JButton(new ImageIcon("pictures/filter.png"));
+        filterBut = new JButton(new ImageIcon(getClass().getResource("/pictures/filter.png")));
         filterPanel = new JPanel();
         filterPanel.setLayout(new BoxLayout(filterPanel, BoxLayout.Y_AXIS));
         filterPanel.add(filterLabel);

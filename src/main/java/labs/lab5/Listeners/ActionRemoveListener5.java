@@ -44,7 +44,6 @@ public class ActionRemoveListener5 implements ActionListener {
      * Удаление выбраных строчек таблицы
      * @param e
      */
-    @Override
     public void actionPerformed(ActionEvent e) {
         int count, i, begin;
         try {

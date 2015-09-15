@@ -89,7 +89,6 @@ public class ActionAddListener5 implements ActionListener {
      * Добавление в таблицу нового элемента
      * @param e
      */
-    @Override
     public void actionPerformed(ActionEvent e) {
         String checkText;
         int check;

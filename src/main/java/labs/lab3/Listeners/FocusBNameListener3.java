@@ -21,9 +21,8 @@ public class FocusBNameListener3 implements FocusListener {
      * Если стоит стандартная фраза, то при попадании в фокус стереть её
      * @param e
      */
-    @Override
     public void focusGained(FocusEvent e) {
-        if (carName.getText().equals(new String("Марка машины"))) {
+        if (carName.getText().equals("Марка машины")) {
             carName.setText("");
         }
     }
@@ -32,7 +31,6 @@ public class FocusBNameListener3 implements FocusListener {
      * Если стоит пустая строка, то при исчезновении фокуса написать стандартную фразу
      * @param e
      */
-    @Override
     public void focusLost(FocusEvent e) {
         if (carName.getText().equals("")) {
             carName.setText("Марка машины");

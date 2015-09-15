@@ -18,28 +18,23 @@ public class MouseSaveListener3 implements MouseListener {
         saveBut = saveB;
     }
 
-    @Override
     public void mouseClicked(MouseEvent e) {
 
     }
 
-    @Override
     public void mousePressed(MouseEvent e) {
 
     }
 
-    @Override
     public void mouseReleased(MouseEvent e) {
 
     }
 
-    @Override
     public void mouseEntered(MouseEvent e) {
-        saveBut.setIcon(new ImageIcon("pictures/save_active.png"));
+        saveBut.setIcon(new ImageIcon(getClass().getResource("/pictures/save_active.png")));
     }
 
-    @Override
     public void mouseExited(MouseEvent e) {
-        saveBut.setIcon(new ImageIcon("pictures/save.png"));
+        saveBut.setIcon(new ImageIcon(getClass().getResource("/pictures/save.png")));
     }
 }

@@ -13,7 +13,6 @@ public class ActionExitListener3 implements ActionListener {
      * Выход из программы
      * @param e
      */
-    @Override
     public void actionPerformed(ActionEvent e) {
         System.exit(0);
     }

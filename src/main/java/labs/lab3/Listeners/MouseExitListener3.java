@@ -18,17 +18,14 @@ public class MouseExitListener3 implements MouseListener {
         exitBut = exitB;
     }
 
-    @Override
     public void mouseClicked(MouseEvent e) {
 
     }
 
-    @Override
     public void mousePressed(MouseEvent e) {
 
     }
 
-    @Override
     public void mouseReleased(MouseEvent e) {
 
     }
@@ -37,17 +34,15 @@ public class MouseExitListener3 implements MouseListener {
      * При наведении мышки отобразить активную иконку
      * @param e
      */
-    @Override
     public void mouseEntered(MouseEvent e) {
-        exitBut.setIcon(new ImageIcon("pictures/exit_active.png"));
+        exitBut.setIcon(new ImageIcon(getClass().getResource("/pictures/exit_active.png")));
     }
 
     /**
      * При отведении мышки отобразить стандартную иконку
      * @param e
      */
-    @Override
     public void mouseExited(MouseEvent e) {
-        exitBut.setIcon(new ImageIcon("pictures/exit.png"));
+        exitBut.setIcon(new ImageIcon(getClass().getResource("/pictures/exit.png")));
     }
 }

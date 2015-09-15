@@ -50,10 +50,10 @@ public class ActionFilterListener4 extends ActionFilterListener3 {
     public void actionPerformed(ActionEvent e) {
         try {
             //Search();
-            if (client.getSelectedItem().equals(new String("Клиент"))) {
+            if (client.getSelectedItem().equals("Клиент")) {
                 throw new NullAuthorException();
             }
-            if (carName.getText().equals(new String("Марка машины"))) {
+            if (carName.getText().equals("Марка машины")) {
                 throw new NullBookException();
             }
         }

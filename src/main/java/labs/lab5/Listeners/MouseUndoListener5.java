@@ -18,17 +18,14 @@ public class MouseUndoListener5 implements MouseListener {
         undoBut = undoB;
     }
 
-    @Override
     public void mouseClicked(MouseEvent e) {
 
     }
 
-    @Override
     public void mousePressed(MouseEvent e) {
 
     }
 
-    @Override
     public void mouseReleased(MouseEvent e) {
 
     }
@@ -37,17 +34,15 @@ public class MouseUndoListener5 implements MouseListener {
      * При наведении мышки отобразить активную иконку
      * @param e
      */
-    @Override
     public void mouseEntered(MouseEvent e) {
-        undoBut.setIcon(new ImageIcon("pictures/undo_active.png"));
+        undoBut.setIcon(new ImageIcon(getClass().getResource("/pictures/undo_active.png")));
     }
 
     /**
      * При отведении мышки отобразить стандартную иконку
      * @param e
      */
-    @Override
     public void mouseExited(MouseEvent e) {
-        undoBut.setIcon(new ImageIcon("pictures/undo.png"));
+        undoBut.setIcon(new ImageIcon(getClass().getResource("/pictures/undo.png")));
     }
 }

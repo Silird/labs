@@ -18,17 +18,14 @@ public class MouseFilterListener3 implements MouseListener {
      * Конструктор
      * @param e
      */
-    @Override
     public void mouseClicked(MouseEvent e) {
 
     }
 
-    @Override
     public void mousePressed(MouseEvent e) {
 
     }
 
-    @Override
     public void mouseReleased(MouseEvent e) {
 
     }
@@ -37,17 +34,15 @@ public class MouseFilterListener3 implements MouseListener {
      * При наведении мышки отобразить активную иконку
      * @param e
      */
-    @Override
     public void mouseEntered(MouseEvent e) {
-        filterBut.setIcon(new ImageIcon("pictures/filter_active.png"));
+        filterBut.setIcon(new ImageIcon(getClass().getResource("/pictures/filter_active.png")));
     }
 
     /**
      * При отведении мышки отобразить стандартную иконку
      * @param e
      */
-    @Override
     public void mouseExited(MouseEvent e) {
-        filterBut.setIcon(new ImageIcon("pictures/filter.png"));
+        filterBut.setIcon(new ImageIcon(getClass().getResource("/pictures/filter.png")));
     }
 }

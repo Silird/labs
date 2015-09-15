@@ -28,7 +28,6 @@ public class ActionCreateListener5 implements ActionListener {
      * Очистка таблицы
      * @param e
      */
-    @Override
     public void actionPerformed(ActionEvent e) {
         int i, rows;
         rows = model.getRowCount();

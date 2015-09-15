@@ -18,17 +18,14 @@ public class MouseEditListener5 implements MouseListener {
         editBut = editB;
     }
 
-    @Override
     public void mouseClicked(MouseEvent e) {
 
     }
 
-    @Override
     public void mousePressed(MouseEvent e) {
 
     }
 
-    @Override
     public void mouseReleased(MouseEvent e) {
 
     }
@@ -37,17 +34,15 @@ public class MouseEditListener5 implements MouseListener {
      * При наведении мышки отобразить активную иконку
      * @param e
      */
-    @Override
     public void mouseEntered(MouseEvent e) {
-        editBut.setIcon(new ImageIcon("pictures/edit_active.png"));
+        editBut.setIcon(new ImageIcon(getClass().getResource("/pictures/edit_active.png")));
     }
 
     /**
      * При отведении мышки отобразить стандартную иконку
      * @param e
      */
-    @Override
     public void mouseExited(MouseEvent e) {
-        editBut.setIcon(new ImageIcon("pictures/edit.png"));
+        editBut.setIcon(new ImageIcon(getClass().getResource("/pictures/edit.png")));
     }
 }

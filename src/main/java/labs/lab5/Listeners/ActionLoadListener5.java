@@ -45,7 +45,6 @@ public class ActionLoadListener5 implements ActionListener {
      * Чтение таблицы из файла
      * @param e
      */
-    @Override
     public void actionPerformed(ActionEvent e) {
         load.setVisible(true);
         int i, rows;

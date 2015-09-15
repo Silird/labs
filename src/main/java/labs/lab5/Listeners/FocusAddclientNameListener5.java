@@ -22,7 +22,6 @@ public class FocusAddclientNameListener5 implements FocusListener {
      * Если при попадании в фокус введена стандартная строка, то стереть её
      * @param e
      */
-    @Override
     public void focusGained(FocusEvent e) {
         if (clientName.getText().equals("Клиент")) {
             clientName.setText("");
@@ -33,7 +32,6 @@ public class FocusAddclientNameListener5 implements FocusListener {
      * Если при исчезновении фокуса введена пустая строка, то ввести стандартную
      * @param e
      */
-    @Override
     public void focusLost(FocusEvent e) {
         if (clientName.getText().equals("")) {
             clientName.setText("Клиент");
