@@ -27,6 +27,9 @@
 *.iws
 .idea/
 
+#maven
+/target
+
 #JavaDoc
 /JavaDoc
 
