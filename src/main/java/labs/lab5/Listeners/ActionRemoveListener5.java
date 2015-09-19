@@ -45,15 +45,14 @@ public class ActionRemoveListener5 implements ActionListener {
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
-        int count, i, begin;
+        int deliting[], i, begin;
         try {
-            count = cars.getSelectedRowCount();
-            if (count == 0) {
+            deliting = cars.getSelectedRows();
+            if (deliting == null) {
                 throw new NullSelectedException();
             }
-            begin = cars.getSelectedRows()[0];
-            for (i = begin; i < (begin + count); i++) {
-                model.removeRow(begin);
+            for (i = cars.getSelectedRowCount(); i > 0; i--) {
+                model.removeRow(deliting[i - 1]);
             }
             cCombo.refresh(model);
         }
