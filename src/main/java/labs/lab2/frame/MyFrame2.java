@@ -19,8 +19,9 @@ public class MyFrame2 {
     protected JTextField carName;
     protected JTextField dateTake;
     protected JButton filterBut;
-    protected JPanel filterPanel, clientPanel, carPanel, datePanel;
-    protected JCheckBox clientcheck, carcheck, datecheck;
+    protected JPanel filterPanel, clientPanel, carPanel, datePanel, checkPanel;
+    protected JCheckBox clientcheck, carcheck, datecheck, Checkcheck;
+    protected JComboBox comboCheck;
     protected JLabel filterLabel;
     protected JPanel eastPanel;
 
@@ -31,7 +32,7 @@ public class MyFrame2 {
         //Create
         carsList = new JFrame("Автомастерская");
         carsList.setSize(700, 300);
-        carsList.setMinimumSize(new Dimension(700, 260));
+        carsList.setMinimumSize(new Dimension(700,300));
         carsList.setLocationRelativeTo(null);
         carsList.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -89,6 +90,13 @@ public class MyFrame2 {
         datePanel.add(datecheck);
         datePanel.add(dateTake);
 
+        comboCheck = new JComboBox(new String[] {"Готовность", "Готово", "Не готово"});
+        Checkcheck = new JCheckBox();
+        checkPanel = new JPanel();
+        checkPanel.setLayout(new BoxLayout(checkPanel, BoxLayout.X_AXIS));
+        checkPanel.add(Checkcheck);
+        checkPanel.add(comboCheck);
+
         filterLabel = new JLabel("Поиск");
         //bookName.sets
         filterBut = new JButton(new ImageIcon(getClass().getResource("/pictures/filter.png")));
@@ -98,6 +106,8 @@ public class MyFrame2 {
         filterPanel.add(clientPanel);
         filterPanel.add(carPanel);
         filterPanel.add(datePanel);
+        filterPanel.add(checkPanel);
+        filterPanel.add(new JLabel(" "));
         filterPanel.add(filterBut);
         eastPanel = new JPanel();
         eastPanel.add(filterPanel, BorderLayout.NORTH);

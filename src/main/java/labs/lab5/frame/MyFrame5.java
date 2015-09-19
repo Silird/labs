@@ -13,7 +13,7 @@ public class MyFrame5 extends MyFrame4 {
     protected FileDialog save, load;
     protected JTextField clientName, carName, date;
     protected JLabel addLabel;
-    protected JCheckBox checkBook;
+    protected JCheckBox checkcar;
     protected JButton addBut, removeBut, editBut, checkEditBut, undoBut;
     protected JPanel addPanel, southPanel, addLabelPanel;
 
@@ -57,12 +57,12 @@ public class MyFrame5 extends MyFrame4 {
         dateTake.addFocusListener(new FocusAddDateListener5(dateTake));
 
 
-        checkBook = new JCheckBox("Готовность");
+        checkcar = new JCheckBox("Готовность");
 
         addBut = new JButton(new ImageIcon(getClass().getResource("/pictures/add.png")));
         addBut.setToolTipText("Добавить элемент в таблицу");
         addBut.addMouseListener(new MouseAddListener5(addBut));
-        addBut.addActionListener(new ActionAddListener5(carsList, model, clientName, carName, date, checkBook, client));
+        addBut.addActionListener(new ActionAddListener5(carsList, model, clientName, carName, date, checkcar, client));
 
         removeBut = new JButton(new ImageIcon(getClass().getResource("/pictures/remove.png")));
         removeBut.setToolTipText("Удалить выбранные строки из таблицы");
@@ -84,16 +84,16 @@ public class MyFrame5 extends MyFrame4 {
         undoBut.addMouseListener(new MouseUndoListener5(undoBut));
 
         editBut.addActionListener(new ActionEditListener5(carsList, model, cars, addBut, checkEditBut,
-                editBut, undoBut, removeBut, clientName, carName, date, checkBook));
+                editBut, undoBut, removeBut, clientName, carName, date, checkcar));
         undoBut.addActionListener(new ActionUndoListener5(carsList, model, cars, addBut, checkEditBut,
-                editBut, undoBut, removeBut, clientName, carName, date, checkBook));
+                editBut, undoBut, removeBut, clientName, carName, date, checkcar));
         checkEditBut.addActionListener(new ActionAcceptListener5(carsList, model, cars, addBut, checkEditBut,
-                editBut, undoBut, removeBut, clientName, carName, date, checkBook, client));
+                editBut, undoBut, removeBut, clientName, carName, date, checkcar, client));
 
         addPanel.add(clientName);
         addPanel.add(carName);
         addPanel.add(date);
-        addPanel.add(checkBook);
+        addPanel.add(checkcar);
         addPanel.add(addBut);
         addPanel.add(checkEditBut);
         addPanel.add(editBut);
