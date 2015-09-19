@@ -19,7 +19,8 @@ public class MyFrame2 {
     protected JTextField carName;
     protected JTextField dateTake;
     protected JButton filterBut;
-    protected JPanel filterPanel;
+    protected JPanel filterPanel, clientPanel, carPanel, datePanel;
+    protected JCheckBox clientcheck, carcheck, datecheck;
     protected JLabel filterLabel;
     protected JPanel eastPanel;
 
@@ -66,19 +67,37 @@ public class MyFrame2 {
         carsList.add(scroll, BorderLayout.CENTER);
 
         client = new MyComboBox(model);
+        clientcheck = new JCheckBox();
+        clientPanel = new JPanel();
+        clientPanel.setLayout(new BoxLayout(clientPanel, BoxLayout.X_AXIS));
+        clientPanel.add(clientcheck);
+        clientPanel.add(client);
+
         carName = new JTextField("Марка машины");
         carName.setColumns(12);
+        carcheck = new JCheckBox();
+        carPanel = new JPanel();
+        carPanel.setLayout(new BoxLayout(carPanel, BoxLayout.X_AXIS));
+        carPanel.add(carcheck);
+        carPanel.add(carName);
+
         dateTake = new JTextField("Дата");
         dateTake.setColumns(12);
+        datecheck = new JCheckBox();
+        datePanel = new JPanel();
+        datePanel.setLayout(new BoxLayout(datePanel, BoxLayout.X_AXIS));
+        datePanel.add(datecheck);
+        datePanel.add(dateTake);
+
         filterLabel = new JLabel("Поиск");
         //bookName.sets
         filterBut = new JButton(new ImageIcon(getClass().getResource("/pictures/filter.png")));
         filterPanel = new JPanel();
         filterPanel.setLayout(new BoxLayout(filterPanel, BoxLayout.Y_AXIS));
         filterPanel.add(filterLabel);
-        filterPanel.add(client);
-        filterPanel.add(carName);
-        filterPanel.add(dateTake);
+        filterPanel.add(clientPanel);
+        filterPanel.add(carPanel);
+        filterPanel.add(datePanel);
         filterPanel.add(filterBut);
         eastPanel = new JPanel();
         eastPanel.add(filterPanel, BorderLayout.NORTH);
