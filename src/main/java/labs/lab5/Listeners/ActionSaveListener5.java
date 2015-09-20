@@ -48,7 +48,7 @@ public class ActionSaveListener5 implements ActionListener {
             if (save.getFile() == null) {
                 throw new NullFileException();
             }
-            BufferedWriter writer = new BufferedWriter(new FileWriter((fileName)));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
             for (i = 0; i < model.getRowCount(); i++) {
                 for (j = 0; j < model.getColumnCount(); j++) {
                     writer.write((String) model.getValueAt(i, j));
