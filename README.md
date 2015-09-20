@@ -8,3 +8,5 @@
 # lab 5 - src.main.java.labs.lab5.main.lab5 void main
 # Add work with txt files save/load
 # Add work with main table
+# lab 6 - src.main.java.labs.lab6.main.lab6 void main
+# Add work with XML-files
