@@ -84,5 +84,6 @@ public class ActionLoadListener6 extends ActionLoadListener5 {
         catch (ParserConfigurationException ex) {
             JOptionPane.showMessageDialog(carsList, ex.getMessage());
         }
+        load.setFile("*.xml");
     }
 }

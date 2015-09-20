@@ -2,25 +2,21 @@ package labs.lab6.Listeners;
 
 import labs.lab5.Listeners.ActionSaveListener5;
 
-import javax.print.Doc;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -70,8 +66,9 @@ public class ActionSaveListener6 extends ActionSaveListener5 {
                 car.setAttribute("ready", (String) model.getValueAt(i, 3));
             }
             Transformer trans = TransformerFactory.newInstance().newTransformer();
-            FileWriter fw = new FileWriter(fileName);
-            trans.transform(new DOMSource(doc), new StreamResult(fw));
+            trans.setOutputProperty(OutputKeys.INDENT, "yes");
+            FileOutputStream fis = new FileOutputStream(fileName);
+            trans.transform(new DOMSource(doc), new StreamResult(fis));
         }
         catch (TransformerConfigurationException ex) {
             JOptionPane.showMessageDialog(carsList, ex.getMessage());
@@ -88,5 +85,6 @@ public class ActionSaveListener6 extends ActionSaveListener5 {
         catch (NullFileException ex) {
             JOptionPane.showMessageDialog(carsList, ex.getMessage());
         }
+        save.setFile("*.xml");
     }
 }
