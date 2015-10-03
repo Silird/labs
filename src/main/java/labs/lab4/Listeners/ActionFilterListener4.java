@@ -29,7 +29,7 @@ public class ActionFilterListener4 extends ActionFilterListener3 {
      */
     private class NullBookException extends Exception {
         public NullBookException() {
-            super("Вы не ввели название книги для поиска");
+            super("Вы не ввели марку машины");
         }
     }
 
@@ -38,7 +38,7 @@ public class ActionFilterListener4 extends ActionFilterListener3 {
      */
     private class NullAuthorException extends Exception {
         public NullAuthorException() {
-            super("Вы не выбрали автора");
+            super("Вы не выбрали клиента");
         }
     }
 

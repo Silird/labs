@@ -126,7 +126,7 @@ public class ActionAcceptListener5 implements ActionListener {
             editBut.setEnabled(true);
             undoBut.setVisible(false);
             removeBut.setVisible(true);
-            clientName.setText("Клинет");
+            clientName.setText("Клиент");
             carName.setText("Марка машины");
             ready.setSelected(false);
             cars.setEnabled(true);
