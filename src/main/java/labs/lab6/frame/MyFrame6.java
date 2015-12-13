@@ -7,7 +7,7 @@ import labs.lab6.Listeners.ActionSaveListener6;
 import java.awt.event.ActionListener;
 
 /**
- * Конструктор формы для 4 лабы
+ * Конструктор формы для 6 лабы
  */
 public class MyFrame6 extends MyFrame5 {
 
