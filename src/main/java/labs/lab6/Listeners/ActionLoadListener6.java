@@ -49,8 +49,13 @@ public class ActionLoadListener6 extends ActionLoadListener5 {
      */
     public void actionPerformed(ActionEvent e) {
         load.setVisible(true);
-        int i;
         String fileName = load.getDirectory() + load.getFile();
+        LoadXML(fileName);
+        load.setFile("*.xml");
+    }
+
+    public void LoadXML(String fileName) {
+        int i;
         try {
             if (load.getFile() == null) {
                 throw new NullFileException();
@@ -84,6 +89,5 @@ public class ActionLoadListener6 extends ActionLoadListener5 {
         catch (ParserConfigurationException ex) {
             JOptionPane.showMessageDialog(carsList, ex.getMessage());
         }
-        load.setFile("*.xml");
     }
 }

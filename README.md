@@ -12,3 +12,5 @@
 # Add work with XML-files
 # lab 7 - src.main.java.labs.lab7.main.lab7 void main
 # Add saving table in pdf- and html-files
+# lab 8 - src.main.java.labs.lab8.main.lab8 void main
+# Add multithreads app

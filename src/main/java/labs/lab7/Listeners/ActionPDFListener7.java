@@ -24,16 +24,13 @@ import java.awt.event.ActionListener;
  * Обработчик нажатия кнопки "Сделать PDF"
  */
 public class ActionPDFListener7 implements ActionListener {
-    protected JFrame carsList;
     protected DefaultTableModel model;
 
     /**
      * Конструктор
-     * @param cList
      * @param m
      */
-    public ActionPDFListener7(JFrame cList, DefaultTableModel m) {
-        carsList = cList;
+    public ActionPDFListener7(DefaultTableModel m) {
         model = m;
     }
 
@@ -42,6 +39,10 @@ public class ActionPDFListener7 implements ActionListener {
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
+        savePDF();
+    }
+
+    public void savePDF () {
         Document document = new Document(PageSize.A4, 50, 50, 50, 50);
 
         PdfPTable pdftable = new PdfPTable(4);
@@ -93,6 +94,5 @@ public class ActionPDFListener7 implements ActionListener {
         }
 
         document.close();
-
     }
 }

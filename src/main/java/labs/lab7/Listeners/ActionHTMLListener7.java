@@ -14,16 +14,13 @@ import javax.swing.table.DefaultTableModel;
  * Обработчик нажатия кнопки "Сделать HTML"
  */
 public class ActionHTMLListener7 implements ActionListener {
-    protected JFrame carsList;
     protected DefaultTableModel model;
 
     /**
      * Конструктор
-     * @param cList
      * @param m
      */
-    public ActionHTMLListener7(JFrame cList, DefaultTableModel m) {
-        carsList = cList;
+    public ActionHTMLListener7(DefaultTableModel m) {
         model = m;
     }
 
@@ -32,6 +29,10 @@ public class ActionHTMLListener7 implements ActionListener {
      * @param e
      */
     public void actionPerformed(ActionEvent e) {
+        saveHTML();
+    }
+
+    public void saveHTML() {
         PrintWriter pw = null;
         try {
             pw = new PrintWriter(new FileWriter("D:\\Work\\Java\\Универ\\labs\\Сохранённые таблицы\\makeHTML.html"));
@@ -48,6 +49,5 @@ public class ActionHTMLListener7 implements ActionListener {
         }
         pw.println("</TABLE>");
         pw.close();
-
     }
 }

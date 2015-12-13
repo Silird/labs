@@ -21,11 +21,11 @@ public class MyFrame7 extends MyFrame6 {
         super.show();
 
         makePDF = new JButton("Make PDF");
-        makePDF.addActionListener(new ActionPDFListener7(carsList, model));
+        makePDF.addActionListener(new ActionPDFListener7(model));
         toolBar.add(makePDF);
 
         makeHTML = new JButton("Make HTML");
-        makeHTML.addActionListener(new ActionHTMLListener7(carsList, model));
+        makeHTML.addActionListener(new ActionHTMLListener7(model));
         toolBar.add(makeHTML);
 
         carsList.setVisible(true);
