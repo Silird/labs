@@ -26,7 +26,6 @@ public class MyFrame7 extends MyFrame6 {
 
         makeHTML = new JButton("Make HTML");
         makeHTML.addActionListener(new ActionHTMLListener7(carsList, model));
-        //makeHTML.addActionListener();
         toolBar.add(makeHTML);
 
         carsList.setVisible(true);

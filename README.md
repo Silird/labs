@@ -10,3 +10,5 @@
 # Add work with main table
 # lab 6 - src.main.java.labs.lab6.main.lab6 void main
 # Add work with XML-files
+# lab 7 - src.main.java.labs.lab7.main.lab7 void main
+# Add saving table in pdf- and html-files

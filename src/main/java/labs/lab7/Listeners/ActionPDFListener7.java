@@ -1,16 +1,9 @@
 package labs.lab7.Listeners;
 
-/*
-import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.data.JRXmlDataSource;
-import net.sf.jasperreports.engine.export.JRPdfExporter;
-*/
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-//import com.itextpdf.text.Document;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
@@ -25,37 +18,30 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
+
 
 /**
- * Created by Александр on 26.10.2015.
+ * Обработчик нажатия кнопки "Сделать PDF"
  */
 public class ActionPDFListener7 implements ActionListener {
     protected JFrame carsList;
     protected DefaultTableModel model;
 
+    /**
+     * Конструктор
+     * @param cList
+     * @param m
+     */
     public ActionPDFListener7(JFrame cList, DefaultTableModel m) {
         carsList = cList;
         model = m;
     }
 
+    /**
+     * Запись таблицы в pdf-файл
+     * @param e
+     */
     public void actionPerformed(ActionEvent e) {
-        /*
-        try {
-
-            JRDataSource ds = new JRXmlDataSource("D:\\Work\\Java\\Универ\\labs\\Сохранённые таблицы\\template.xml", "XPath");
-            JasperReport jasperReport = JasperCompileManager.compileReport("/report2.jrxml");
-            JasperPrint print = JasperFillManager.fillReport(jasperReport, new HashMap(), ds);
-            JRExporter exporter = null;
-            exporter = new JRPdfExporter();
-            exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, "D:\\Work\\Java\\Универ\\labs\\Сохранённые таблицы\\makepdf.pdf");
-            exporter.setParameter(JRExporterParameter.JASPER_PRINT, print);
-            exporter.exportReport();
-        }
-        catch (JRException e1) {
-            e1.printStackTrace();
-        }
-        */
         Document document = new Document(PageSize.A4, 50, 50, 50, 50);
 
         PdfPTable pdftable = new PdfPTable(4);

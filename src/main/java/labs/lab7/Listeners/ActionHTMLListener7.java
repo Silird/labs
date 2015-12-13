@@ -11,17 +11,26 @@ import javax.swing.table.DefaultTableModel;
 
 
 /**
- * Created by Александр on 13.12.2015.
+ * Обработчик нажатия кнопки "Сделать HTML"
  */
 public class ActionHTMLListener7 implements ActionListener {
     protected JFrame carsList;
     protected DefaultTableModel model;
 
+    /**
+     * Конструктор
+     * @param cList
+     * @param m
+     */
     public ActionHTMLListener7(JFrame cList, DefaultTableModel m) {
         carsList = cList;
         model = m;
     }
 
+    /**
+     * Сохранение таблицы в html-файл
+     * @param e
+     */
     public void actionPerformed(ActionEvent e) {
         PrintWriter pw = null;
         try {
