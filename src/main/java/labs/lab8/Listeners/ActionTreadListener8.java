@@ -38,9 +38,9 @@ public class ActionTreadListener8 implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         Object mutex = new Object();
-        new MyThreads(1, carsList, load, model, cCombo, mutex).start();
         new MyThreads(2, carsList, load, model, cCombo, mutex).start();
         new MyThreads(3, carsList, load, model, cCombo, mutex).start();
+        new MyThreads(1, carsList, load, model, cCombo, mutex).start();
         synchronized (mutex) {
             mutex.notifyAll();
         }

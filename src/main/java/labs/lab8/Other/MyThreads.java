@@ -32,7 +32,7 @@ public class MyThreads extends Thread {
      */
     public MyThreads(int i, JFrame cList, FileDialog l, DefaultTableModel m, MyComboBox c, Object mut) {
         type=i;
-        mutex = mut;
+        this.mutex = mut;
         carsList = cList;
         load = l;
         model = m;
@@ -45,13 +45,17 @@ public class MyThreads extends Thread {
     public void run() {
 
         if (type == 1) {
+            setPriority(10);
             synchronized (mutex) {
+                /*
                 try {
+
                     mutex.wait();
                 }
                 catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
+                */
 
                 try {
                     new ActionLoadListener6(carsList, load, model, cCombo).LoadXML(
@@ -60,13 +64,23 @@ public class MyThreads extends Thread {
                 catch (Exception ex) {
                     ex.printStackTrace();
                 }
-                mutex.notify();
+                mutex.notifyAll();
+                /*
+                try {
+                    Thread.sleep(50);
+                }
+
+                catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                */
             }
         }
 
         if (type == 2) {
+            setPriority(5);
             synchronized (mutex) {
-                mutex.notifyAll();
+                //mutex.notifyAll();
                 try {
                     mutex.wait();
                 }
@@ -76,15 +90,18 @@ public class MyThreads extends Thread {
 
                 model.addRow(new String[]{"Изменение таблицы", "для теста потоков", "10.12.2015", "Готово"});
                 new ActionPDFListener7(model).savePDF();
+                //mutex.notifyAll();
             }
         }
 
         if (type==3) {
+            setPriority(1);
             synchronized (mutex) {
-                mutex.notifyAll();
+                //mutex.notify();
                 try {
                     mutex.wait();
-                } catch (InterruptedException e) {
+                }
+                catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 

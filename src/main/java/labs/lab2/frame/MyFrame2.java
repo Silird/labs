@@ -67,6 +67,7 @@ public class MyFrame2 {
         scroll = new JScrollPane(cars);
         carsList.add(scroll, BorderLayout.CENTER);
 
+        model.setValueAt("jdkjgkrj",1,1);
         client = new MyComboBox(model);
         clientcheck = new JCheckBox();
         clientPanel = new JPanel();
