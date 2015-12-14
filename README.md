@@ -14,3 +14,5 @@
 # Add saving table in pdf- and html-files
 # lab 8 - src.main.java.labs.lab8.main.lab8 void main
 # Add multithreads app
+# lab 9 - src.main.java.labs.lab9.HtlpingClassTest
+# Add unit tests
