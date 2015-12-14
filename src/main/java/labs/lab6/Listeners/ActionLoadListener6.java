@@ -2,6 +2,7 @@ package labs.lab6.Listeners;
 
 import labs.lab2.frame.MyComboBox;
 import labs.lab5.Listeners.ActionLoadListener5;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
@@ -22,6 +23,9 @@ import java.io.IOException;
  * Обработка события нажатия на кнопку загрузки
  */
 public class ActionLoadListener6 extends ActionLoadListener5 {
+
+    public static final Logger logger = Logger.getLogger(ActionLoadListener6.class);
+
     /**
      * Конструктор
      *
@@ -57,6 +61,7 @@ public class ActionLoadListener6 extends ActionLoadListener5 {
     public void LoadXML(String fileName) {
         int i;
         try {
+            logger.info("Открытие XML-файла");
             if (load.getFile() == null) {
                 throw new NullFileException();
             }
@@ -76,8 +81,10 @@ public class ActionLoadListener6 extends ActionLoadListener5 {
                 String ready = attrs.getNamedItem("ready").getNodeValue();
                 model.addRow(new String[] {client, carName, date, ready});
             }
+            logger.info("XML открыт");
         }
         catch (NullFileException ex) {
+            logger.error("File Not Found", ex);
             JOptionPane.showMessageDialog(carsList, ex.getMessage());
         }
         catch (SAXException ex) {
@@ -88,6 +95,9 @@ public class ActionLoadListener6 extends ActionLoadListener5 {
         }
         catch (ParserConfigurationException ex) {
             JOptionPane.showMessageDialog(carsList, ex.getMessage());
+        }
+        catch (Exception ex) {
+            logger.error("Ошибка открытия XML");
         }
     }
 }

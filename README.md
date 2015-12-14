@@ -16,3 +16,5 @@
 # Add multithreads app
 # lab 9 - src.main.java.labs.lab9.HtlpingClassTest
 # Add unit tests
+# lab 10 - src.main.java.labs.lab8.main.lab8 void main
+# Add logs
